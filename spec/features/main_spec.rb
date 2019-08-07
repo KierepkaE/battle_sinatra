@@ -7,9 +7,4 @@ feature "testing setting up our game" do
     expect(page).to have_content("John vs Jerry")
   end
 
-  scenario 'viewing hitting points' do
-    sign_in_and_play()
-    expect(page).to have_content "John points: 100 HP"
-  end
-
 end
