@@ -13,12 +13,8 @@ class Battle < Sinatra::Base
   end
 
   get '/' do
-    erb(:set_up)
+    erb(:main)
   end
-
-
-
-
 
 
 
