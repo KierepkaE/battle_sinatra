@@ -9,6 +9,8 @@ class Battle < Sinatra::Base
   enable :sessions
 
   get '/play' do
+    @first_user_points = 100
+    @second_user_points = 100
     @first_user = session[:first_user]
     @second_user = session[:second_user]
     erb(:play)
