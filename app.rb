@@ -6,10 +6,18 @@ require 'selenium-webdriver'
 
 class Battle < Sinatra::Base
 
+  enable :sessions
+
+  get '/play' do
+    @first_user = session[:first_user]
+    @second_user = session[:second_user]
+    erb(:play)
+  end
+
   post '/names' do
-    @first_user = params[:first_user]
-    @second_user = params[:second_user]
-    erb(:names)
+    session[:first_user] = params[:first_user]
+    session[:second_user] = params[:second_user]
+    redirect '/play'
   end
 
   get '/' do
